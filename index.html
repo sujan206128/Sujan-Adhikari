@@ -1,244 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sujan Adhikari – HR & Admin Professional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <section>
+<body class="bg-[#080e16] text-white overflow-x-hidden">
 
-    <div class="nav container mx-auto flex justify-between items-center">
-        <a href="/"><img class="h-[67px] w-[279px]" src="Images/Logo.png" alt="Logo"></a>
-        <div class="aboutus">
-            <a class="font-[400] text-[21px] leading-[31.5px] px-[10px] py-[14px] h-[52px] w-[93px]" href="/">Home</a>
-            <a class="font-[400] text-[21px] leading-[31.5px] px-[10px] py-[14px] h-[52px] w-[93px]" href="/">About Me</a>
-            <a class="font-[400] text-[21px] leading-[31.5px] px-[10px] py-[14px] h-[52px] w-[93px]" href="/">Services</a>
-            <a class="font-[400] text-[21px] leading-[31.5px] px-[10px] py-[14px] h-[52px] w-[93px]" href="/">Projects</a>
-            <a class="font-[400] text-[21px] leading-[31.5px] px-[10px] py-[14px] h-[52px] w-[93px]" href="/">Testimonials</a>
-            <a class="font-[400] text-[21px] leading-[31.5px] px-[10px] py-[14px] h-[52px] w-[93px]" href="/">Contact</a>
-        </div>
-        <button class="bg-orange-500 text-white text-lg px-6 py-3 rounded-lg hover:bg-orange-600 transition duration-300">
-            Downlaod CV
-        </button>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cring"></div>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 md:px-16 py-5 flex items-center justify-between">
+    <a href="#hero" class="font-['Syne'] font-extrabold text-lg tracking-tight">
+      <span class="text-sky-400">&lt;</span>Sujan<span class="text-sky-400">/&gt;</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-9 text-sm font-medium text-gray-400">
+      <li><a href="#about"      class="hover:text-sky-400 transition-colors">About</a></li>
+      <li><a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a></li>
+      <li><a href="#skills"     class="hover:text-sky-400 transition-colors">Skills</a></li>
+      <li><a href="#contact"    class="hover:text-sky-400 transition-colors">Contact</a></li>
+      <li><a href="mailto:sujanadhikari3223@gmail.com" class="bg-sky-500 hover:bg-sky-400 text-white text-sm px-5 py-2 rounded-full transition-colors font-semibold">Hire Me</a></li>
+    </ul>
+    <button id="ham" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+      <span class="w-6 h-0.5 bg-white block"></span>
+      <span class="w-6 h-0.5 bg-white block"></span>
+      <span class="w-4 h-0.5 bg-white block"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-16 left-0 right-0 z-40 bg-[#0d1520] border-b border-sky-500/10 px-6 py-4 md:hidden">
+    <ul class="flex flex-col gap-4 text-gray-300 text-sm font-medium">
+      <li><a href="#about"      onclick="closeMM()">About</a></li>
+      <li><a href="#experience" onclick="closeMM()">Experience</a></li>
+      <li><a href="#skills"     onclick="closeMM()">Skills</a></li>
+      <li><a href="#contact"    onclick="closeMM()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section id="hero" class="relative min-h-screen flex items-center px-6 md:px-16 pt-24 overflow-hidden">
+    <div class="blob w-[420px] h-[420px] bg-sky-500 top-10 right-0"></div>
+    <div class="blob w-60 h-60 bg-blue-700 bottom-20 left-0" style="animation-delay:3s"></div>
+    <div class="absolute inset-0 opacity-[0.025]" style="background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:60px 60px;"></div>
+
+    <div class="relative z-10 max-w-4xl">
+      <p class="section-label mb-6 reveal">👋 Hello, I'm</p>
+      <h1 class="hero-name text-6xl md:text-8xl font-extrabold leading-none mb-4 reveal" style="transition-delay:.1s">
+        Sujan<br>Adhikari
+      </h1>
+      <div class="text-xl md:text-2xl text-gray-400 font-light mb-8 reveal" style="transition-delay:.2s">
+        <span id="typed" class="text-sky-400 font-medium"></span><span class="type-cursor text-sky-400">|</span>
+      </div>
+      <p class="text-gray-500 max-w-xl leading-relaxed mb-10 reveal" style="transition-delay:.3s">
+        HR, Admin & Operations professional based in Kathmandu, Nepal. I drive efficiency, streamline processes, and keep organizations running smoothly.
+      </p>
+      <div class="flex flex-wrap gap-4 reveal" style="transition-delay:.4s">
+        <a href="#experience" class="bg-sky-500 hover:bg-sky-400 text-white font-semibold px-8 py-3.5 rounded-full transition-all hover:scale-105">View Experience →</a>
+        <a href="#contact" class="border border-white/20 hover:border-sky-500 text-white font-medium px-8 py-3.5 rounded-full transition-all hover:bg-sky-500/5">Get In Touch</a>
+      </div>
+      <div class="flex flex-wrap gap-10 mt-16 reveal" style="transition-delay:.5s">
+        <div><div class="text-3xl font-bold font-['Syne']">4+</div><div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Years Experience</div></div>
+        <div class="w-px bg-white/10"></div>
+        <div><div class="text-3xl font-bold font-['Syne']">5+</div><div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Companies</div></div>
+        <div class="w-px bg-white/10"></div>
+        <div><div class="text-3xl font-bold font-['Syne']">HR</div><div class="text-xs text-gray-500 uppercase tracking-widest mt-1">& Operations</div></div>
+      </div>
     </div>
 
-    <div class="intro mx-auto container mt-[120px] flex ">
-        <div class="w-[714px]">
-            <h2 class="text-[24px] font-[600] leading-[36px]">Hi I am </h2>
-            <h2 class="font-[600] text-[32px] leading-[48px] text-[#FD6F00]">Fawzi Sayed</h2>
-            <p class="font-[700] text-[100px] leading-[120px]">UI & UX</p>
-            <p class="font-[700] text-[100px] leading-[120px] ml-[230px]">Designer </p>
-            <p class="font-[400] text-[21px] leading-[31.5px] text-justify mt-[28px]">Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra</p>
-            <button class="hire text-[21px] font-[400] leading-[31.5px] h-[52px] w-[188px] bg-[#FD6F00] text-[#FFFFFF] mt-[22px] rounded-[5px]">Hire Me </button>
-        </div>
-        <div class="ml-[148px]">
-            <img src="Images/Group 2.svg" alt="image">
-            <div class="flex items-center mt-[36.76px] ml-[125px]">
-            <a href="/"><img src="Images/Facebook - Negative.svg" alt="facebook"></a>
-            <a href="/"><img class="ml-[25.03px]" src="Images/Twitter - Negative.svg" alt="twit"></a>
-            <a href="/"><img class="ml-[25.03px]" src="Images/Instagram - Negative.svg" alt="insta"></a>
-            <a href="/"><img class="ml-[25.03px]" src="Images/LinkedIn - Negative.svg" alt="In"></a>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 text-xs tracking-widest uppercase animate-bounce">
+      <span>Scroll</span>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" class="py-32 px-6 md:px-16 bg-[#0b1220]">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal">
+        <p class="section-label mb-3">Who I am</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-16">About Me</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="relative">
+            <div class="w-full aspect-square max-w-sm mx-auto rounded-2xl bg-gradient-to-br from-sky-500/20 to-[#0d1a2a] border border-sky-500/10 flex items-center justify-center">
+              <!-- Replace with: <img src="assets/images/photo.jpg" class="w-full h-full object-cover rounded-2xl" alt="Sujan Adhikari"> -->
+              <div class="text-center">
+                <div class="text-7xl mb-4">👨‍💼</div>
+                <p class="text-gray-400 text-sm font-semibold">Sujan Adhikari</p>
+                <p class="text-sky-400 text-xs mt-1">HR & Admin Professional</p>
+              </div>
             </div>
-        </div>
-    </div>
-
-    <div class="mx-auto container mt-[69.52px] flex items-center">
-        <div class="">
-            <img src="Images/Group 7.svg" alt="">
-        </div>
-        <div class="ml-[33px] w-[756px]">
-            <h1 class="font-[600] text-[65px] leading-[97.5px]">About Me </h1>
-            <p class="font-[400] text-[21px] leading-[31.5px] mt-[15px] text-justify">Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra</p>
-            <div class="mt-[15px]">
-            <label class="font-[600] text-[24px] leading-[36px] text-xl">UX</label>
-                <input type="range" min="0" max="100" class="w-full h-2 rounded-lg accent-orange-500">
-            <label class="font-[600] text-[24px] leading-[36px] mt-[15px]">Website Design</label>
-                <input type="range" min="0" max="100" class="w-full h-2 rounded-lg accent-orange-500">
-            <label class="font-[600] text-[24px] leading-[36px] mt-[25px]">App Design </label>
-                <input type="range" min="0" max="100" class="w-full h-2 rounded-lg accent-orange-500">
-            <label class="font-[600] text-[24px] leading-[36px] mt-[25px]">Graphic Design </label>
-                <input type="range" min="0" max="100" class="w-full h-2 rounded-lg accent-orange-500">
-            </div>
-        </div>
-    </div>
-
-    <!-- Services  -->
-
-    <div class="mt-[139px] container mx-auto text-center w-[932px]">
-           
-                <h1 class="font-[600] text-[65px] leading-[97.5px]">Services</h1>
-            
-                <p class="mt-[15px] text-center text-[21px] font-normal leading-100%">Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium</p>
-            
+            <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-sky-500/25 rounded-2xl -z-10"></div>
           </div>
-          <div class="mt-[24px] container mx-auto flex">
-            <div class="w-[330px] h-[346px] bg-[#F8F8F8] rounded-[14px]">
-              <div class="mt-[57px] ml-[18px]">
-                <img src="Images/UIUX.svg" alt="">
-                <h1 class="font-[600] text-[32px] leading-[48px] mt-[26px]">UI/UX</h1>
-                <p class="font-[400] text-[19px] leading-[28.5px] mt-[15px]">Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
-              </div>
-            </div>
+        </div>
 
-            <div class="w-[330px] h-[346px] bg-[#F8F8F8] rounded-[14px] ml-[31px]">
-                <div class="mt-[57px] ml-[18px]">
-                  <img src="Images/web design.svg" alt="">
-                  <h1 class="font-[600] text-[32px] leading-[48px] mt-[26px]">Web Design </h1>
-                  <p class="font-[400] text-[19px] leading-[28.5px] mt-[15px]">Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
-                </div>
-              </div>
-
-              <div class="w-[330px] h-[346px] bg-[#F8F8F8] rounded-[14px] ml-[31px]">
-                <div class="mt-[57px] ml-[18px]">
-                  <img src="Images/App design.svg" alt="">
-                  <h1 class="font-[600] text-[32px] leading-[48px] mt-[26px]">App Design</h1>
-                  <p class="font-[400] text-[19px] leading-[28.5px] mt-[15px]">Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
-                </div>
-              </div>
-
-              <div class="w-[330px] h-[346px] bg-[#F8F8F8] rounded-[14px] ml-[31px]">
-                <div class="mt-[57px] ml-[18px]">
-                  <img src="Images/Graphic design.svg" alt="">
-                  <h1 class="font-[600] text-[32px] leading-[48px] mt-[26px]">Graphic Design </h1>
-                  <p class="font-[400] text-[19px] leading-[28.5px] mt-[15px]">Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
-                </div>
-              </div>
+        <div class="reveal" style="transition-delay:.2s">
+          <p class="text-gray-400 leading-relaxed text-lg mb-5">
+            I'm <span class="text-white font-semibold">Sujan Adhikari</span>, an Admin, HR & Operations professional based in <span class="text-sky-400">Kathmandu, Nepal</span>.
+          </p>
+          <p class="text-gray-500 leading-relaxed mb-8">
+            With hands-on experience managing day-to-day office operations, people processes, and administrative systems, I work closely with management to ensure smooth coordination across HR, finance, and administration. Known for being reliable, organized, and execution-focused.
+          </p>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            <div class="bg-white/5 rounded-xl p-4 border border-white/5"><div class="text-sky-400 text-xs uppercase tracking-widest mb-1">Name</div><div class="text-white text-sm">Sujan Adhikari</div></div>
+            <div class="bg-white/5 rounded-xl p-4 border border-white/5"><div class="text-sky-400 text-xs uppercase tracking-widest mb-1">Location</div><div class="text-white text-sm">Kathmandu, Nepal</div></div>
+            <div class="bg-white/5 rounded-xl p-4 border border-white/5"><div class="text-sky-400 text-xs uppercase tracking-widest mb-1">Phone</div><div class="text-white text-sm">+977 9818854822</div></div>
+            <div class="bg-white/5 rounded-xl p-4 border border-white/5"><div class="text-sky-400 text-xs uppercase tracking-widest mb-1">Status</div><div class="text-green-400 text-sm flex items-center gap-1.5"><span class="w-2 h-2 bg-green-400 rounded-full inline-block animate-pulse"></span>Open to Work</div></div>
           </div>
+          <div class="flex gap-3 flex-wrap">
+            <a href="mailto:sujanadhikari3223@gmail.com" class="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold px-5 py-3 rounded-full transition-all hover:scale-105 text-sm">📧 Email Me</a>
+            <a href="https://www.linkedin.com/in/sujanadhikari-1796251b4" target="_blank" class="inline-flex items-center gap-2 border border-sky-500/30 hover:border-sky-400 text-sky-400 font-semibold px-5 py-3 rounded-full transition-all text-sm">💼 LinkedIn</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Projects -->
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience" class="py-32 px-6 md:px-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="reveal">
+        <p class="section-label mb-3">My journey</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-16">Experience</h2>
+      </div>
 
-    <div class="mt-[139px] container mx-auto">
-        <h1 class="font-[600] text-[65px] leading-[97.5px] text-[#1E1E1E] text-center">My Projects</h1>
-        <p class="font-[400] text-[21px] leading-[31.5px] mt-[22px] container w-[921px] mx-auto text-center">Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris est risus lectus. Phasellus consequat urna tellus</p>
+      <div class="space-y-0">
 
-        <div class="mt-[59px] flex justify-center items-center">
-            <div>
-                <button class="font-[400] text-[24px] leading-[36px] bg-[#F8F8F8] rounded-[12px] px-[20px] py-[10px]">All</button>
+        <div class="reveal flex gap-6 relative pb-10">
+          <div class="timeline-line"></div>
+          <div class="timeline-dot mt-1 z-10"></div>
+          <div class="tcard flex-1 bg-white/5 border border-white/8 rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+              <div><h3 class="text-white font-bold text-lg">Finance & Admin Officer</h3><p class="text-sky-400 text-sm font-medium">TalentSathi – Simplifying the Recruitment</p></div>
+              <span class="bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs px-3 py-1 rounded-full">Dec 2025 – Present</span>
             </div>
-            <div class="ml-[22px]">
-                <button class="font-[400] text-[24px] leading-[36px] rounded-[12px] px-[20px] py-[10px] bg-[#F8F8F8]">UI/UX</button>
-
-                <button class="font-[400] text-[24px] leading-[36px] rounded-[12px] px-[20px] py-[10px] bg-[#FD6F00] ml-[17px] text-[#FFFFFF]">Web Design</button>
-
-                <button class="font-[400] text-[24px] leading-[36px] rounded-[12px] px-[20px] py-[10px] bg-[#F8F8F8] ml-[17px]">App Design</button>
-
-                <button class="font-[400] text-[24px] leading-[36px] rounded-[12px] px-[20px] py-[10px] bg-[#F8F8F8] ml-[17px]">Graphic Design</button>    
-            </div>
+            <p class="text-gray-500 text-sm mb-3">📍 Lalitpur, Nepal</p>
+            <ul class="space-y-1.5 text-gray-400 text-sm">
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Manages income & expense records through CRM systems</li>
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Oversees daily office operations, employee discipline & policy compliance</li>
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Supports end-to-end recruitment: sourcing, onboarding & offboarding</li>
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Manages HRIS-based attendance, payroll & salary disbursement</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Pages -->
-
-        <div class="mt-[106px] flex">
-            <div class="mr-[44px]">
-                <img src="Images/Group 1.svg" alt="">
-            <h1 class="font-[400] text-[19px] leading-[28.5px] text-[#FD6F00] mt-[37px]">Web Design </h1>
-            <p class="font-[700] text-[24px] leading-[36px] mt-[10px]">AirCalling Landing Page Design </p>
+        <div class="reveal flex gap-6 relative pb-10" style="transition-delay:.1s">
+          <div class="timeline-line"></div>
+          <div class="timeline-dot mt-1 z-10"></div>
+          <div class="tcard flex-1 bg-white/5 border border-white/8 rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+              <div><h3 class="text-white font-bold text-lg">Assistant – HR Operations & Business Support</h3><p class="text-sky-400 text-sm font-medium">CMS Nepal Pvt Ltd</p></div>
+              <span class="bg-white/5 border border-white/10 text-gray-400 text-xs px-3 py-1 rounded-full">Sep – Nov 2025</span>
             </div>
-
-            <div>
-                <img src="Images/Group 2.png" alt="">
-            <h1 class="font-[400] text-[19px] leading-[28.5px] text-[#FD6F00] mt-[37px]">Web Design </h1>
-            <p class="font-[700] text-[24px] leading-[36px] mt-[10px]">Business Landing Page Design </p>
-            </div>
-
-            <div class="ml-[44px]">
-                <img src="Images/Group 3.png" alt="">
-            <h1 class="font-[400] text-[19px] leading-[28.5px] text-[#FD6F00] mt-[37px]">Web Design </h1>
-            <p class="font-[700] text-[24px] leading-[36px] mt-[10px]">Ecom Web Page Design </p>
-            </div>
+            <p class="text-gray-500 text-sm mb-3">📍 Kathmandu, Nepal</p>
+            <ul class="space-y-1.5 text-gray-400 text-sm">
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Coordinated with clients and supported HR operations</li>
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Ensured smooth workflow between company and outsourced staff</li>
+            </ul>
+          </div>
         </div>
+
+        <div class="reveal flex gap-6 relative pb-10" style="transition-delay:.2s">
+          <div class="timeline-line"></div>
+          <div class="timeline-dot mt-1 z-10"></div>
+          <div class="tcard flex-1 bg-white/5 border border-white/8 rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+              <div><h3 class="text-white font-bold text-lg">Admin & Operations Assistant</h3><p class="text-sky-400 text-sm font-medium">Webpoint Solutions, LLC</p></div>
+              <span class="bg-white/5 border border-white/10 text-gray-400 text-xs px-3 py-1 rounded-full">Feb 2024 – Aug 2025</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">📍 Kathmandu, Nepal</p>
+            <ul class="space-y-1.5 text-gray-400 text-sm">
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Handled calls, scheduled meetings, managed files & office supplies</li>
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Assisted in daily operations, documentation & inter-department coordination</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal flex gap-6 relative pb-10" style="transition-delay:.3s">
+          <div class="timeline-line"></div>
+          <div class="timeline-dot mt-1 z-10"></div>
+          <div class="tcard flex-1 bg-white/5 border border-white/8 rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+              <div><h3 class="text-white font-bold text-lg">Admin, Operations & Inventory Roles</h3><p class="text-sky-400 text-sm font-medium">Komal Care Pvt Ltd</p></div>
+              <span class="bg-white/5 border border-white/10 text-gray-400 text-xs px-3 py-1 rounded-full">Jun 2022 – Dec 2023</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">📍 Kathmandu, Nepal</p>
+            <ul class="space-y-1.5 text-gray-400 text-sm">
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Order processing, shipment coordination & inventory tracking</li>
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Vendor communication and accurate documentation</li>
+              <li class="flex gap-2"><span class="text-sky-400 mt-0.5">▹</span>Data entry: maintaining digital records & supporting reporting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal flex gap-6 relative" style="transition-delay:.4s">
+          <div class="timeline-dot mt-1 z-10"></div>
+          <div class="tcard flex-1 bg-gradient-to-br from-sky-500/8 to-blue-700/5 border border-sky-500/15 rounded-2xl p-6">
+            <div class="flex flex-wrap items-start justify-between gap-2">
+              <div><h3 class="text-white font-bold text-lg">Bachelor of Business (BBS)</h3><p class="text-sky-400 text-sm font-medium">Tribhuvan University</p></div>
+              <span class="bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs px-3 py-1 rounded-full">🎓 Education</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Testimonials  -->
-
-    <div class="mt-[135px] container mx-auto">
-        <div class="text-center container w-[936px] mx-auto">
-            <h1 class="font-[600] text-[65px] leading-[97.5px] mt-[15px]">Testimonials</h1>
-            <p class="font-[400] text-[21px]leading-[31.5px]">Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium</p>
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="py-32 px-6 md:px-16 bg-[#0b1220]">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal">
+        <p class="section-label mb-3">What I bring</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-16">Skills</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="reveal">
+          <h3 class="text-lg font-semibold mb-6 text-gray-300">Core Competencies</h3>
+          <div class="space-y-5" id="skill-bars"></div>
         </div>
-
-        <div class="mt-[72px] w-[1087px] h-[344px] rounded-[14px] bg-[#F8F8F8] mx-auto container p-[3.438rem] flex">
-            <div class="h-[235px] w-[235px] ml-[48px]">
-                <img src="Images/face.svg" alt="">
+        <div class="reveal" style="transition-delay:.2s">
+          <h3 class="text-lg font-semibold mb-6 text-gray-300">Tools & Systems</h3>
+          <div class="flex flex-wrap gap-3 mb-8" id="tools-wrap"></div>
+          <div class="p-5 rounded-2xl bg-sky-500/5 border border-sky-500/10">
+            <h4 class="font-semibold text-white mb-3 text-sm">Key Strengths</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs px-3 py-1 rounded-full">Reliable & Organized</span>
+              <span class="bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs px-3 py-1 rounded-full">Execution-Focused</span>
+              <span class="bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs px-3 py-1 rounded-full">Confidentiality</span>
+              <span class="bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs px-3 py-1 rounded-full">Fast Adapter</span>
+              <span class="bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs px-3 py-1 rounded-full">Detail-Oriented</span>
             </div>
-
-            <div class="w-[716px] ml-[11px]">
-                <p class="font-[700] text-[48px] leading-[48px] text-[#FD6F00]">“</p>
-                <p class="font-[400] text-[21px] leading-[31.5px] ml-[18px]">Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices.</p>
-                <p class="font-[700] text-[48px] leading-[48px] text-[#FD6F00] ml-[450px]" >“</p>
-                <h1 class="font-[500] text-[24px] leading-[36px] ml-[18px]">Name</h1>
-                <h2 class="font-[400] text-[19px] leading-[28.5px] ml-[18px]">CEO</h2> 
-            </div>
-
+          </div>
         </div>
-
-        <div class="buttons mt-[87px] container mx-auto text-center">
-             <button class="h-[16px] w-[57px] bg-[#D9D9D9] rounded-[8px]"></button>
-             <button class="h-[16px] w-[57px] bg-[#FD6F00] rounded-[8px] ml-[9px]"></button>
-             <button class="h-[16px] w-[57px] bg-[#D9D9D9] rounded-[8px] ml-[9px]"></button>
-             <button class="h-[16px] w-[57px] bg-[#D9D9D9] rounded-[8px] ml-[9px]"></button>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Enter your Email -->
-
-    <div class="mt-[139px] mx-auto container text-center">
-        <div class="w-[932px] container mx-auto text-center">
-              <h1 class="font-[600] text-[65px] leading-[97.5px]">Lets Design Together</h1>
-              <p class="font-[400] text-[21px] leading-[31.5px] mt-[15px]">Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium</p>
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="py-32 px-6 md:px-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="reveal text-center mb-16">
+        <p class="section-label mb-3">Let's connect</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Get In Touch</h2>
+        <p class="text-gray-500">Looking to hire or collaborate? I'd love to hear from you.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="reveal space-y-4">
+          <a href="mailto:sujanadhikari3223@gmail.com" class="flex items-center gap-4 p-4 bg-white/5 border border-white/8 rounded-xl hover:border-sky-500/30 transition-colors group">
+            <div class="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 group-hover:bg-sky-500/20 transition-colors">📧</div>
+            <div><div class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Email</div><div class="text-white text-sm">sujanadhikari3223@gmail.com</div></div>
+          </a>
+          <a href="tel:+9779818854822" class="flex items-center gap-4 p-4 bg-white/5 border border-white/8 rounded-xl hover:border-sky-500/30 transition-colors group">
+            <div class="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 group-hover:bg-sky-500/20 transition-colors">📱</div>
+            <div><div class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Phone</div><div class="text-white text-sm">+977 9818854822</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/sujanadhikari-1796251b4" target="_blank" class="flex items-center gap-4 p-4 bg-white/5 border border-white/8 rounded-xl hover:border-sky-500/30 transition-colors group">
+            <div class="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400 group-hover:bg-sky-500/20 transition-colors">💼</div>
+            <div><div class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">LinkedIn</div><div class="text-white text-sm">Sujan Adhikari</div></div>
+          </a>
+          <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/8 rounded-xl">
+            <div class="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center text-sky-400">📍</div>
+            <div><div class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Location</div><div class="text-white text-sm">Kathmandu, Nepal</div></div>
+          </div>
         </div>
-        <div class="mt-[48px]">
-            <input type="text" placeholder="Enter Your Email" class="w-[627px] h-[75px] rounded-[14px] bg-[#F8F8F8] text-[21px] font-[400] text-[#797979] ;leading-[31.5px] border-solid rounded-[0.875rem] p-[1.375rem]">
-            <button class="font-[600] text-[24px] leading-[36px] bg-[#FD6F00] text-[#FFFFFF] rounded-[14px] h-[75px] w-[222px] ml-[25px]">Contact Me </button>
+        <div class="reveal" style="transition-delay:.2s">
+          <div class="space-y-4">
+            <input type="text"   placeholder="Your Name"    class="inp w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm transition-all" />
+            <input type="email"  placeholder="Your Email"   class="inp w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm transition-all" />
+            <input type="text"   placeholder="Subject"      class="inp w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm transition-all" />
+            <textarea            placeholder="Your Message" rows="4" class="inp w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm transition-all resize-none"></textarea>
+            <button onclick="sendMsg()" class="w-full bg-sky-500 hover:bg-sky-400 text-white font-semibold py-3.5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]">
+              Send Message ✉️
+            </button>
+            <p id="fmsg" class="text-center text-sm hidden"></p>
+          </div>
         </div>
+      </div>
     </div>
+  </section>
 
-</section>
+  <!-- ── FOOTER ── -->
+  <footer class="py-10 px-6 text-center border-t border-white/5">
+    <p class="text-gray-600 text-sm">Portfolio of <span class="text-sky-400 font-medium">Sujan Adhikari</span> · <span id="yr"></span></p>
+    <p class="text-gray-700 text-xs mt-1">HR | Admin & Operations Executive · Kathmandu, Nepal</p>
+  </footer>
 
-<footer>
-    <div class="mt-[139px] bg-[#F8F8F8]">
-           <div class="container mx-auto flex items-center justify-center h-[80.1px] w-[242px]">
-            <img class="mt-[109px]" src="Images/Logo (1).svg" alt="">
-           </div>
-
-           <div class="container mx-auto flex items-center justify-center mt-[51.9px]">
-            <a href="/" class="font-[400] text-[21px] leading-[31.5px] px-[14px] py-[10px] mt-[51.9px]">Home</a>
-            <a href="/" class="font-[400] text-[21px] leading-[31.5px] px-[14px] py-[10px] mt-[51.9px]">About Me</a>
-            <a href="/" class="font-[400] text-[21px] leading-[31.5px] px-[14px] py-[10px] mt-[51.9px]">Services</a>
-            <a href="/" class="font-[400] text-[21px] leading-[31.5px] px-[14px] py-[10px] mt-[51.9px]">Projects</a>
-            <a href="/" class="font-[400] text-[21px] leading-[31.5px] px-[14px] py-[10px] mt-[51.9px]">Testimonials</a>
-            <a href="/" class="font-[400] text-[21px] leading-[31.5px] px-[14px] py-[10px] mt-[51.9px]">Contact</a>
-           </div>
-
-           <div class="container mx-auto flex items-center justify-center mt-[80.52px] w-[205px]">
-            <a href="/" class="mr-[25.03px]">
-                <img src="Images/Facebook - Negative.svg" alt="">
-            </a>
-
-            <a href="/" class="mr-[25.03px]">
-                <img src="Images/Twitter - Negative.svg" alt="">
-            </a>
-
-            <a href="/" class="mr-[25.03px]">
-                <img src="Images/Instagram - Negative.svg" alt="">
-            </a>
-
-            <a href="/">
-                <img src="Images/LinkedIn - Negative.svg" alt="">
-            </a>
-           </div>
-
-           <div class="mt-[62px] h-[84px] bg-[#545454] items-center flex justify-center">
-               <p class="text-[#FFFFFF] font-[700] text-[21px] leading-[31.5px]">© 2023 <a href="/" class="text-[#E86C0A]">FawziUiUx</a> All Rights Reserved , Inc.</p>
-           </div>
-    </div>
-</footer>
-
-<h1 class="font-bold text-black bg-orange-500 text-center">That's it everyone if you like my website feel free to contact me</h1>
-    <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

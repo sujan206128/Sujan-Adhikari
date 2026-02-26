@@ -1,0 +1,171 @@
+/* ── FONTS ── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+/* ── BASE ── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  cursor: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Syne', sans-serif;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: #0ea5e9;
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, background .2s;
+}
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(14,165,233,.45);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: left .12s ease, top .12s ease;
+}
+.cursor.hov {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 100;
+  opacity: .35;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── NAVBAR ── */
+#navbar {
+  transition: background .3s, box-shadow .3s;
+}
+#navbar.scrolled {
+  background: rgba(8,14,22,0.96) !important;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(14,165,233,.12);
+}
+
+/* ── HERO NAME GRADIENT ── */
+.hero-name {
+  background: linear-gradient(130deg, #fff 45%, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── BACKGROUND BLOBS ── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .07;
+  animation: drift 9s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(28px, 18px) scale(1.06); }
+}
+
+/* ── SKILL BARS ── */
+.skill-fill {
+  width: 0;
+  transition: width 1.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ── EXPERIENCE CARDS ── */
+.tcard {
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.tcard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(14,165,233,.09);
+}
+
+/* ── MOBILE MENU ── */
+#mobile-menu {
+  transition: max-height .3s ease, opacity .3s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+#mobile-menu.open {
+  max-height: 280px;
+  opacity: 1;
+}
+
+/* ── TYPING CURSOR ── */
+.type-cursor {
+  animation: blink .8s step-end infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #0ea5e9;
+}
+
+/* ── CONTACT INPUTS ── */
+.inp:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14,165,233,.1);
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #080e16; }
+::-webkit-scrollbar-thumb { background: #0ea5e9; border-radius: 4px; }
+
+/* ── TIMELINE ── */
+.timeline-line {
+  position: absolute;
+  left: 16px;
+  top: 24px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #0ea5e9, transparent);
+}
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: #0ea5e9;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+  box-shadow: 0 0 12px rgba(14,165,233,.5);
+}
